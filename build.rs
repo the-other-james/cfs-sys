@@ -106,6 +106,9 @@ fn main() {
           // Define operating system for network_includes.h in CFE
           .clang_arg("-D_LINUX_OS_")
 
+          // Can't find stdarg.h???
+          .clang_arg("-I/usr/lib/llvm-7/lib/clang/7.0.1/include")
+
           // This should generate functions from macros with arguments, but
           // does not. I'm not sure what is wrong here.
           .generate_inline_functions(true)
